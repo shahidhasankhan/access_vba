@@ -1,0 +1,16 @@
+Private Sub btnsubmit_Click()
+Dim StrSQL As String
+Dim db As Database
+DoCmd.SetWarnings False
+
+StrSQL = "INSERT INTO [Nozzle Readings] ([Nozzle ID],[Closing Reading], [Testing Ltrs]) VALUES(1,txtnozzle1reading.Value,txtnozzle1test.Value);"
+DoCmd.RunSQL StrSQL
+StrSQL = "INSERT INTO [Nozzle Readings] ([Nozzle ID],[Closing Reading], [Testing Ltrs]) VALUES(2,txtnozzle2reading.Value,txtnozzle2test.Value);"
+DoCmd.RunSQL StrSQL
+StrSQL = "INSERT INTO [Nozzle Readings] ([Nozzle ID],[Closing Reading], [Testing Ltrs]) VALUES(3,txtnozzle3reading.Value,txtnozzle3test.Value);"
+DoCmd.RunSQL StrSQL
+StrSQL = "INSERT INTO [Nozzle Readings] ([Nozzle ID],[Closing Reading], [Testing Ltrs]) VALUES(4,txtnozzle4reading.Value,txtnozzle4test.Value);"
+DoCmd.RunSQL StrSQL
+
+DoCmd.SetWarnings True
+End Sub
