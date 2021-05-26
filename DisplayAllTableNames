@@ -1,0 +1,14 @@
+Private Sub btntest1_Click()
+Dim db As Database
+Dim td As TableDef
+Set db = CurrentDb()
+
+Dim Msg, Title
+Msg = "Do you want to continue?"
+Title = "MsgBox Demonstration"
+
+For Each td In db.TableDefs
+    Msg = td.Name
+    Response = MsgBox(Msg, 3, Title)
+Next td
+End Sub
