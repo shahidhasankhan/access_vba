@@ -1,0 +1,10 @@
+Private Sub btnclear_Click()
+txtnozzle1reading.Value = ""
+txtnozzle2reading.Value = ""
+txtnozzle3reading.Value = ""
+txtnozzle4reading.Value = ""
+txtnozzle1test.Value = ""
+txtnozzle2test.Value = ""
+txtnozzle3test.Value = ""
+txtnozzle4test.Value = ""
+End Sub
