@@ -1,0 +1,99 @@
+Private Sub btngetpricing_Click()
+'### Comments for This Function ###
+'Comment # 1:
+'Above we are using cmblube1.Value as ProductID instead of ProductName because
+'ComboBox returns ID of entry instead of String
+
+Dim productID As Integer
+Dim productPrice As Double
+
+If cmblube1.Value <> "" And txtlube1qty <> "" Then
+    productID = cmblube1.Value 'See Comment # 1
+    productPrice = DLookup("[Selling Price]", "Lubes", "[Lube ID] =" & productID)
+    labelpup1.Caption = productPrice
+    labelna1.Caption = productPrice * txtlube1qty.Value
+End If
+If cmblube2.Value <> "" And txtlube2qty <> "" Then
+    productID = cmblube2.Value 'See Comment # 1
+    productPrice = DLookup("[Selling Price]", "Lubes", "[Lube ID] =" & productID)
+    labelpup2.Caption = productPrice
+    labelna2.Caption = productPrice * txtlube2qty.Value
+End If
+If cmblube3.Value <> "" And txtlube3qty <> "" Then
+    productID = cmblube3.Value 'See Comment # 1
+    productPrice = DLookup("[Selling Price]", "Lubes", "[Lube ID] =" & productID)
+    labelpup3.Caption = productPrice
+    labelna3.Caption = productPrice * txtlube3qty.Value
+End If
+If cmblube4.Value <> "" And txtlube4qty <> "" Then
+    productID = cmblube4.Value 'See Comment # 1
+    productPrice = DLookup("[Selling Price]", "Lubes", "[Lube ID] =" & productID)
+    labelpup4.Caption = productPrice
+    labelna4.Caption = productPrice * txtlube4qty.Value
+End If
+If cmblube5.Value <> "" And txtlube5qty <> "" Then
+    productID = cmblube5.Value 'See Comment # 1
+    productPrice = DLookup("[Selling Price]", "Lubes", "[Lube ID] =" & productID)
+    labelpup5.Caption = productPrice
+    labelna5.Caption = productPrice * txtlube5qty.Value
+End If
+If cmblube6.Value <> "" And txtlube6qty <> "" Then
+    productID = cmblube6.Value 'See Comment # 1
+    productPrice = DLookup("[Selling Price]", "Lubes", "[Lube ID] =" & productID)
+    labelpup6.Caption = productPrice
+    labelna6.Caption = productPrice * txtlube6qty.Value
+End If
+If cmblube7.Value <> "" And txtlube7qty <> "" Then
+    productID = cmblube7.Value 'See Comment # 1
+    productPrice = DLookup("[Selling Price]", "Lubes", "[Lube ID] =" & productID)
+    labelpup7.Caption = productPrice
+    labelna7.Caption = productPrice * txtlube7qty.Value
+End If
+
+    
+
+End Sub
+
+Private Sub btnsubmit_Click()
+Dim StrSQL As String
+DoCmd.SetWarnings False
+
+'Lube 1 Entry
+If cmblube1.Value <> "" And txtlube1qty <> "" Then
+    StrSQL = "INSERT INTO [Lube Sales] ([Lube ID],[Sale Quantity]) VALUES(cmblube1.Value,txtlube1qty);"
+    DoCmd.RunSQL StrSQL
+End If
+'Lube 2 Entry
+If cmblube2.Value <> "" And txtlube2qty <> "" Then
+    StrSQL = "INSERT INTO [Lube Sales] ([Lube ID],[Sale Quantity]) VALUES(cmblube2.Value,txtlube2qty);"
+    DoCmd.RunSQL StrSQL
+End If
+'Lube 3 Entry
+If cmblube3.Value <> "" And txtlube3qty <> "" Then
+    StrSQL = "INSERT INTO [Lube Sales] ([Lube ID],[Sale Quantity]) VALUES(cmblube3.Value,txtlube3qty);"
+    DoCmd.RunSQL StrSQL
+End If
+'Lube 4 Entry
+If cmblube4.Value <> "" And txtlube4qty <> "" Then
+    StrSQL = "INSERT INTO [Lube Sales] ([Lube ID],[Sale Quantity]) VALUES(cmblube4.Value,txtlube4qty);"
+    DoCmd.RunSQL StrSQL
+End If
+'Lube 5 Entry
+If cmblube5.Value <> "" And txtlube5qty <> "" Then
+    StrSQL = "INSERT INTO [Lube Sales] ([Lube ID],[Sale Quantity]) VALUES(cmblube5.Value,txtlube5qty);"
+    DoCmd.RunSQL StrSQL
+End If
+'Lube 6 Entry
+If cmblube6.Value <> "" And txtlube6qty <> "" Then
+    StrSQL = "INSERT INTO [Lube Sales] ([Lube ID],[Sale Quantity]) VALUES(cmblube6.Value,txtlube6qty);"
+    DoCmd.RunSQL StrSQL
+End If
+'Lube 7 Entry
+If cmblube7.Value <> "" And txtlube7qty <> "" Then
+    StrSQL = "INSERT INTO [Lube Sales] ([Lube ID],[Sale Quantity]) VALUES(cmblube7.Value,txtlube7qty);"
+    DoCmd.RunSQL StrSQL
+End If
+
+
+DoCmd.SetWarnings True
+End Sub
